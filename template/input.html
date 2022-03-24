@@ -1,0 +1,35 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+<h1>Калькулятор расчета концентрации СO2. </h1>
+<form> </form>
+
+<h1>Информация о здании!</h1>
+<form action="add" method="POST">
+  {% csrf_token %}
+
+  Введите количество этажей в здании:<input type="text" name="count_office" class="form-control"><br>
+  Введите среднее количество кабинетов на одном этаже:<input type="text" name="count_level" class="form-control"><br>
+
+<h1>Информация о количестве людей в здании!</h1>
+
+  Введите среднее количество людей в одном кабинете:<input type="text" name="count_humans" class="form-control"><br>
+ 
+
+<h1>Информация о автомобильной парковке!</h1>
+
+  Введите количество автомобилей на парковке:<input type="text" name="cars" class="form-control"><br>
+
+<h1>Информация о потреблении электроэнергии!</h1>
+  Введите количество кВт:<input type="text" name="count_kw"  class="form-control"><br>
+
+
+  <h1>Информация о потреблении энергии для отопления помещения!</h1>
+  Введите объем энергии в Гкал, потраченного для отопления помещения:<input type="text" name="count_gas"  class="form-control"><br>
+
+<h1>Информация о времени года!</h1>
+  Введите: "Лето" или "Зима":<input type="text" name="weather"  class="form-control"><br>
+
+  <input type="submit" class="btn btn-primary mb-3">
+</form>
+{% endblock %}
